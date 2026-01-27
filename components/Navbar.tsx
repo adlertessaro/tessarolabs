@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-2xl font-extrabold tracking-tighter text-emerald-600 dark:text-emerald-400">
-              TESSARO<span className="text-slate-900 dark:text-white">LABS</span>
+              Tessaro<span className="text-slate-900 dark:text-white"> Labs</span>
             </Link>
           </div>
           

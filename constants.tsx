@@ -7,10 +7,10 @@ export const SERVICES: ServiceInfo[] = [
     id: 'custom',
     title: 'Sistemas Sob Medida',
     description: 'Desenvolvimento de software exclusivo para os processos únicos da sua empresa.',
-    features: ['Arquitetura Cloud Native', 'IA Generativa Integrada', 'Segurança Bancária'],
+    features: ['Arquitetura Robusta', 'IA Embarcada', 'Segurança', 'Escalabilidade', 'Integrações'],
     icon: 'Cpu',
-    path: '/sistemas',
-    caseMetric: 'ROI em < 6 meses'
+    path: '/cases-sistemas',
+    caseMetric: ' '
   },
   {
     id: 'scanntech',
@@ -62,7 +62,28 @@ export const CASES: CaseStudy[] = [
     description: 'Lançamento de plataforma de pagamentos escalável em 30 dias.',
     metric: 'Time-to-market Recorde',
     image: 'https://picsum.photos/seed/fintech/800/400'
-  }
+  },
+  {
+  id: 'demandas',
+  title: 'Monitoramento de Demandas',
+  description: 'Plataforma centralizada para controle de fluxo operacional e produtividade em tempo real.',
+  metric: '+30% Eficiência',
+  image: 'https://picsum.photos/seed/monitor/800/400'
+},
+{
+  id: 'helpdesk',
+  title: 'HelpDesk Inteligente',
+  description: 'Sistema completo de abertura e acompanhamento de chamados com triagem automatizada.',
+  metric: 'SLA 99.8%',
+  image: 'https://picsum.photos/seed/help/800/400'
+},
+{
+  id: 'api-hub',
+  title: 'API Gateway Simplificado',
+  description: 'Conexão e orquestração de APIs de terceiros para integração rápida de ecossistemas.',
+  metric: 'Setup 5x +Rápido',
+  image: 'https://picsum.photos/seed/api/800/400'
+}
 ];
 
 export const STRATEGIC_PARTNERS = [
@@ -71,4 +92,32 @@ export const STRATEGIC_PARTNERS = [
   { name: 'Scanntech', role: 'Varejo Inteligente' },
   { name: 'Atlassian', role: 'Agilidade & Gestão' },
   { name: 'RD Station', role: 'Marketing Automation' }
+];
+
+// Adicione ao seu constants.tsx
+export const SYSTEM_DETAILS_CASES = [
+  {
+    title: "Monitoramento de Demandas",
+    description: "Plataforma para controle de fluxo operacional e produtividade em tempo real.",
+    icon: "Activity",
+    features: ["Dashboards Live", "Gestão de Gargalos"]
+  },
+  {
+    title: "HelpDesk & Chamados",
+    description: "Sistema de abertura e acompanhamento de demandas com triagem inteligente.",
+    icon: "MessageSquare",
+    features: ["SLA Garantido", "Histórico Completo"]
+  },
+  {
+    title: "API Hub Simplificado",
+    description: "Conexão de APIs de terceiros com orquestração centralizada e segura.",
+    icon: "Share2",
+    features: ["Setup em 48h", "Segurança Bancária"]
+  },
+  {
+    title: "Outras Soluções",
+    description: "Desenvolvimento de microserviços, automações e integrações proprietárias.",
+    icon: "PlusCircle",
+    features: ["Cloud Native", "Escalabilidade"]
+  }
 ];

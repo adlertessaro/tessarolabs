@@ -12,10 +12,11 @@ const Home: React.FC = () => {
   return (
     <div className="w-full bg-white dark:bg-slate-950 transition-colors duration-300">
       <HeroSection 
-        title="Tessaro Labs: Tecnologia Estratégica"
+        title="Tessaro Labs: Tecnologia que resolve"
         subtitle="Construímos o futuro digital da sua empresa. Somos o laboratório de inovação que integra IA, Dados e escala para negócios líderes."
         bullets={["Dev Custom", "Scanntech", "AI & Data", "Web Perf"]}
         ctaText="Falar com Especialista"
+        image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200" // Exemplo de imagem de código
       />
 
       <section className="py-24">
