@@ -6,38 +6,38 @@ export const SERVICES: ServiceInfo[] = [
   {
     id: 'custom',
     title: 'Sistemas Sob Medida',
-    description: 'Desenvolvimento de software exclusivo para os processos únicos da sua empresa.',
+    description: 'Desenvolvimento de software exclusivo para os processos únicos da sua empresa ou ideia.',
     features: ['Arquitetura Robusta', 'IA Embarcada', 'Segurança', 'Escalabilidade', 'Integrações'],
     icon: 'Cpu',
     path: '/cases-sistemas',
     caseMetric: ' '
   },
   {
-    id: 'scanntech',
-    title: 'Varejo Inteligente',
+    id: 'focus',
+    title: 'Dashboard BI Interativo',
     description: 'Integração profunda com Scanntech e inteligência de dados para PDV.',
-    features: ['Automação de Promoções', 'Dashboards Real-time', 'Sincronização Fiscal'],
+    features: ['Contas a pagar e receber integradas', 'Dashboards Real-time', 'Fluxo de caixa centralizado', 'Menos retrabalho operacional', 'Dados confiáveis para decisão'],
     icon: 'Layout',
-    path: '/gestao',
-    caseMetric: 'Zero perda de dados'
+    path: '/integracao',
+    caseMetric: ' '
   },
   {
     id: 'sites',
     title: 'Sites de Performance',
-    description: 'Websites focados em conversão agressiva e velocidade extrema.',
-    features: ['Nota 100 Lighthouse', 'SEO Dominante', 'White Label p/ Agências'],
+    description: 'Websites pensados para carregar rápido, guiar o usuário e converter visitas em oportunidades reais de negócio',
+    features: ['Nota 100 Lighthouse', 'SEO Dominante', 'White Label p/ Agências', 'Design Responsivo', 'Otimização Contínua'],
     icon: 'Zap',
     path: '/sites',
-    caseMetric: 'Conversão +45%'
+    caseMetric: ' '
   },
   {
     id: 'qa',
-    title: 'QA & Gestão Ágil',
-    description: 'Garantia de qualidade e acompanhamento via Jira/Confluence.',
-    features: ['99% Cobertura de Testes', 'Gestão Transparente', 'DevOps Automático'],
+    title: 'Qualidade & Gestão Ágil',
+    description: 'Cuidamos da organização, validação e acompanhamento do projeto para garantir entregas consistentes e sem surpresas.',
+    features: ['99% Cobertura de Testes', 'Gestão Transparente', 'Comunicação Contínua', 'Validação em cada etapa'],
     icon: 'ShieldCheck',
     path: '/gestao',
-    caseMetric: 'Entrega 20% mais rápida'
+    caseMetric: ' '
   }
 ];
 
@@ -119,5 +119,32 @@ export const SYSTEM_DETAILS_CASES = [
     description: "Desenvolvimento de microserviços, automações e integrações proprietárias.",
     icon: "PlusCircle",
     features: ["Cloud Native", "Escalabilidade"]
+  }
+];
+
+export const INTEGRATION_FEATURES = [
+  {
+    title: "Contas a Pagar & Receber",
+    description: "Sincronização automática de títulos e baixas diretamente com seu banco ou ERP.",
+    icon: "Wallet",
+    features: ["Baixa Automática", "DDA Integrado"]
+  },
+  {
+    title: "Fluxo de Caixa Real-time",
+    description: "Visão consolidada de entradas e saídas previstas para decisões estratégicas.",
+    icon: "BarChart3",
+    features: ["Previsibilidade", "Dashboards"]
+  },
+  {
+    title: "Conciliação Bancária",
+    description: "Elimine o trabalho manual comparando extratos e registros de forma inteligente.",
+    icon: "RefreshCw",
+    features: ["Match de Títulos", "Erro Zero"]
+  },
+  {
+    title: "Hub de APIs Financeiras",
+    description: "Conectamos seu sistema aos principais gateways e bancos do mercado.",
+    icon: "PlugZap",
+    features: ["Segurança SSL", "Log de Eventos"]
   }
 ];

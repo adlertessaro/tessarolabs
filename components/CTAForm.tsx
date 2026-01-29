@@ -43,14 +43,14 @@ const CTAForm: React.FC = () => {
   return (
     <div className="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden transition-colors">
       <div className="mb-8">
-        <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-2">Vamos iniciar seu projeto?</h2>
-        <p className="text-slate-600 dark:text-slate-400">Conte-nos seu desafio e receba um orçamento personalizado.</p>
+        <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-2">Qual sua ideia hoje?</h2>
+        <p className="text-slate-600 dark:text-slate-400">Conte-nos seu plano e nós ajudamos a realizar.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Nome Completo</label>
+            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Como podemos te chamar?</label>
             <input 
               required
               type="text" 
@@ -61,7 +61,7 @@ const CTAForm: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">E-mail Corporativo</label>
+            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Qual seu E-mail?</label>
             <input 
               required
               type="email" 

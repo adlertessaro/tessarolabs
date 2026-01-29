@@ -16,7 +16,7 @@ interface HeroProps {
 
 const HeroSection: React.FC<HeroProps> = ({ title, subtitle, bullets, ctaText, image }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20 transition-colors duration-300">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 transition-colors duration-300">
       {/* Background Ornaments ... */}
       <div className="absolute inset-0 z-0 opacity-30 dark:opacity-100 transition-opacity">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-emerald-600/20 rounded-full blur-[120px]"></div>
@@ -75,16 +75,7 @@ const HeroSection: React.FC<HeroProps> = ({ title, subtitle, bullets, ctaText, i
               </div>
               
               {/* Elemento flutuante de código para reforçar o tema */}
-              <div className="absolute -bottom-6 -left-6 bg-slate-900 p-5 rounded-2xl border border-slate-800 shadow-3xl hidden md:block">
-                <div className="flex gap-1.5 mb-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
-                </div>
-                <code className="text-emerald-400 font-mono text-sm leading-none">
-                  const tech = "solve";
-                </code>
-              </div>
+              
             </motion.div>
           )}
         </div>

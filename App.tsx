@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import Partners from './pages/Partners';
 import Careers from './pages/Careers';
 import CasesSystems from './pages/CasesSystems';
+import Integration from './pages/Integration';
 
 export const ThemeContext = createContext({
   isDark: true,
@@ -62,6 +63,7 @@ const App: React.FC = () => {
               <Route path="/parcerias" element={<Partners />} />
               <Route path="/trabalhe-conosco" element={<Careers />} />
               <Route path="/cases-sistemas" element={<CasesSystems />} />
+              <Route path="/integracao" element={<Integration />} />
             </Routes>
           </main>
           <Footer />
