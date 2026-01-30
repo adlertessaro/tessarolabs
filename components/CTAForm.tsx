@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 const CTAForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -13,9 +13,37 @@ const CTAForm: React.FC = () => {
     msg: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdanwqay", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Nome: formData.nome,
+          Email: formData.email,
+          WhatsApp: formData.tel,
+          Servico: formData.servico,
+          Mensagem: formData.msg
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ nome: '', email: '', tel: '', servico: 'Sistemas Customizados', msg: '' });
+      } else {
+        alert("Ocorreu um erro ao enviar. Por favor, tente novamente.");
+      }
+    } catch (error) {
+      alert("Erro de conexão. Verifique sua internet.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -53,6 +81,7 @@ const CTAForm: React.FC = () => {
             <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Como podemos te chamar?</label>
             <input 
               required
+              name="nome"
               type="text" 
               className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
               placeholder="Ex: João Silva"
@@ -64,6 +93,7 @@ const CTAForm: React.FC = () => {
             <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Qual seu E-mail?</label>
             <input 
               required
+              name="email"
               type="email" 
               className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
               placeholder="joao@empresa.com"
@@ -73,23 +103,41 @@ const CTAForm: React.FC = () => {
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Serviço de Interesse</label>
-          <select 
-            className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
-            value={formData.servico}
-            onChange={(e) => setFormData({...formData, servico: e.target.value})}
-          >
-            <option>Sistemas Sob Medida</option>
-            <option>Criação de Site Alta Performance</option>
-            <option>Parceria para Agências</option>
-            <option>IA & Integrações</option>
-          </select>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">WhatsApp / Telefone</label>
+            <input 
+              required
+              name="tel"
+              type="tel" 
+              className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+              placeholder="(54) 99999-9999"
+              value={formData.tel}
+              onChange={(e) => setFormData({...formData, tel: e.target.value})}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Serviço de Interesse</label>
+            <select 
+              name="servico"
+              className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+              value={formData.servico}
+              onChange={(e) => setFormData({...formData, servico: e.target.value})}
+            >
+              <option>Sistemas Sob Medida</option>
+              <option>Focus BI Gerencial</option>
+              <option>CoreFit Academia</option>
+              <option>Criação de Site Alta Performance</option>
+              <option>Consultoria Financeira</option>
+              <option>Gestão de Produtos (PM)</option>
+            </select>
+          </div>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Mensagem</label>
           <textarea 
+            name="msg"
             rows={4}
             className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
             placeholder="Descreva seu projeto ou necessidade de parceria..."
@@ -102,10 +150,20 @@ const CTAForm: React.FC = () => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           type="submit"
-          className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-5 rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-emerald-900/20 text-lg transition-all"
+          disabled={isLoading}
+          className={`w-full ${isLoading ? 'bg-slate-400 cursor-not-allowed' : 'bg-emerald-600 hover:bg-emerald-500'} text-white font-black py-5 rounded-xl flex items-center justify-center gap-2 shadow-xl shadow-emerald-900/20 text-lg transition-all`}
         >
-          <span>Solicitar Análise Técnica</span>
-          <Send size={20} />
+          {isLoading ? (
+            <>
+              <Loader2 className="animate-spin" size={20} />
+              <span>Enviando...</span>
+            </>
+          ) : (
+            <>
+              <span>Falar sobre minha ideia</span>
+              <Send size={20} />
+            </>
+          )}
         </motion.button>
       </form>
     </div>

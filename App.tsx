@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, createContext } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ExitIntentPopup from './components/ExitIntentPopup';
@@ -15,6 +15,8 @@ import Partners from './pages/Partners';
 import Careers from './pages/Careers';
 import CasesSystems from './pages/CasesSystems';
 import Integration from './pages/Integration';
+import Focus from './pages/focus';
+import CoreFit from './pages/CoreFit';
 
 export const ThemeContext = createContext({
   isDark: true,
@@ -64,6 +66,8 @@ const App: React.FC = () => {
               <Route path="/trabalhe-conosco" element={<Careers />} />
               <Route path="/cases-sistemas" element={<CasesSystems />} />
               <Route path="/integracao" element={<Integration />} />
+              <Route path="/focus" element={<Focus />} />
+              <Route path="/corefit" element={<CoreFit />} />
             </Routes>
           </main>
           <Footer />

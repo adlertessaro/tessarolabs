@@ -1,15 +1,15 @@
-
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Gift } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // Importação necessária
 
 const ExitIntentPopup: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
+  const navigate = useNavigate(); // Hook para navegação
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
-      // Trigger when mouse leaves the top of the viewport
       if (e.clientY < 0 && !hasShown) {
         setIsVisible(true);
         setHasShown(true);
@@ -19,6 +19,12 @@ const ExitIntentPopup: React.FC = () => {
     document.addEventListener('mouseleave', handleMouseLeave);
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [hasShown]);
+
+  // Função para fechar e navegar
+  const handleConfirm = () => {
+    setIsVisible(false);
+    navigate('/contato');
+  };
 
   if (!isVisible) return null;
 
@@ -42,22 +48,22 @@ const ExitIntentPopup: React.FC = () => {
             <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-8 text-emerald-500 shadow-inner">
               <Gift size={40} />
             </div>
-            <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">Espere um minuto!</h2>
-            <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-6">Receba uma consultoria de viabilidade gratuita.</h3>
-            <p className="text-slate-500 dark:text-slate-400 mb-10 text-lg leading-relaxed">Não saia sem validar sua ideia com nossos especialistas. Economize tempo e dinheiro no seu próximo projeto.</p>
+            <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">Espere!</h2>
+            <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-6">Não vá agora.</h3>
+            <p className="text-slate-500 dark:text-slate-400 mb-10 text-lg leading-relaxed">Tenha seu site profissional em apenas 7 dias.</p>
             
             <div className="space-y-4">
               <button 
-                onClick={() => setIsVisible(false)}
+                onClick={handleConfirm} // Chama a função de navegação
                 className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-5 rounded-2xl transition-all shadow-xl shadow-emerald-900/30 text-lg"
               >
-                Sim, quero validar meu projeto!
+                Quero meu site!
               </button>
               <button 
                 onClick={() => setIsVisible(false)}
                 className="w-full text-slate-400 text-sm font-bold hover:text-slate-600 dark:hover:text-slate-200 transition-all uppercase tracking-widest"
               >
-                Prefiro arriscar sozinho
+                Prefiro não aparecer na internet
               </button>
             </div>
           </div>

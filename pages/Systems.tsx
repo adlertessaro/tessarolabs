@@ -55,7 +55,7 @@ const Systems: React.FC = () => {
                     { n: '02', t: 'Design & Prototipagem', d: 'Visualização da UX antes da primeira linha de código.' },
                     { n: '03', t: 'Sprints de Código', d: 'Desenvolvimento ágil com entregas a cada 15 dias.' },
                     { n: '04', t: 'QA & Homologação', d: 'Garantia de 99% de cobertura de testes e segurança.' },
-                    { n: '05', t: 'Launch & Suporte', d: 'Lançamento escalável com monitoramento 24/7.' },
+                    { n: '05', t: 'Launch & Suporte', d: 'Lançamento escalável com monitoramento.' },
                   ].map((step) => (
                     <div key={step.n} className="flex gap-6 group">
                       <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center font-black shrink-0 group-hover:scale-110 transition-transform">
@@ -85,25 +85,25 @@ const Systems: React.FC = () => {
                 <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500">
                   <Calculator size={24} />
                 </div>
-                <span className="text-[10px] font-black bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full uppercase tracking-widest">Focus ERP</span>
+                <span className="text-[10px] font-black bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full uppercase tracking-widest">FOCUS</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Saúde Financeira no Varejo</h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">Ideal para farmácias e pequenos varejistas que precisam de controle fiscal e integração Scanntech imediata.</p>
-              <Link to="/contato" className="text-emerald-500 font-bold flex items-center gap-2 hover:gap-3 transition-all text-sm">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Gestão Financeira Estratégica</h3>
+              <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">Visualize seu fluxo de caixa, contas a pagar e receber em um só lugar. O FOCUS transforma movimentações complexas em decisões seguras para o sua empresa.</p>
+              <Link to="/focus" className="text-emerald-500 font-bold flex items-center gap-2 hover:gap-3 transition-all text-sm">
                 Conhecer Licenciamento <ArrowRight size={14} />
               </Link>
             </div>
 
-            <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 group hover:border-blue-500/50 transition-all">
+            <div className="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 group hover:border-yellow-400/50 transition-all">
               <div className="flex justify-between items-start mb-6">
-                <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500">
+                <div className="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center text-yellow-400">
                   <Activity size={24} />
                 </div>
-                <span className="text-[10px] font-black bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full uppercase tracking-widest">CoreFit IA</span>
+                <span className="text-[10px] font-black bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full uppercase tracking-widest">CoreFit</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Inteligência Fitness</h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">Gestão de academias com prescrição de treinos automatizada por IA, aumentando a retenção em até 40%.</p>
-              <Link to="/contato" className="text-blue-500 font-bold flex items-center gap-2 hover:gap-3 transition-all text-sm">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Gestão de Redes & Academias</h3>
+              <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">O ecossistema inteligente para gerenciar unidades, profissionais e alunos. Potencialize os resultados com prescrição de treinos via IA em uma plataforma intuitiva, focada em engajamento e na fidelização da sua base.</p>
+              <Link to="/corefit" className="text-yellow-400 font-bold flex items-center gap-2 hover:gap-3 transition-all text-sm">
                 Conhecer Licenciamento <ArrowRight size={14} />
               </Link>
             </div>

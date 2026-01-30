@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Phone, Globe, Handshake, Briefcase } from 'lucide-react';
+import { MapPin, Mail, MessageCircleMore, Globe, Handshake, Briefcase } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-6 block">
-              TESSARO<span className="text-slate-900 dark:text-white">LABS</span>
+              Tessaro<span className="text-slate-900 dark:text-white"> Labs</span>
             </Link>
             <p className="text-slate-600 dark:text-slate-400 max-w-sm mb-8">
               Laboratório de Inovação e Desenvolvimento. Braço tecnológico estratégico para negócios que buscam escala global e eficiência real.
@@ -33,8 +33,8 @@ const Footer: React.FC = () => {
               <li><Link to="/sistemas" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Sistemas</Link></li>
               <li><Link to="/sites" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Sites</Link></li>
               <li><Link to="/gestao" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Gestão</Link></li>
+              <li><Link to="/consultoria" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Consultoria</Link></li>
               <li><Link to="/parcerias" className="flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-500 transition-colors"><Handshake size={16} /> Seja um Parceiro</Link></li>
-              <li><Link to="/trabalhe-conosco" className="flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-500 transition-colors"><Briefcase size={16} /> Trabalhe Conosco</Link></li>
             </ul>
           </div>
 
@@ -42,13 +42,14 @@ const Footer: React.FC = () => {
             <h4 className="text-slate-900 dark:text-white font-bold mb-6">Fale Conosco</h4>
             <ul className="space-y-4 text-slate-600 dark:text-slate-400">
               <li className="flex items-center gap-2 text-xs"><Mail size={14} /> contato@tessarolabs.com</li>
-              <li className="flex items-center gap-2 text-xs"><Phone size={14} /> +55 (54) 99999-9999</li>
+              <li className="flex items-center gap-2 text-xs"><MessageCircleMore size={14} /> +55 (54) 93300-5187</li>
+              <li><Link to="/trabalhe-conosco" className="flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-500 transition-colors"><Briefcase size={16} /> Trabalhe Conosco</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">© 2026 Tessaro Labs. Tecnologia para quem decide.</p>
+          <p className="text-slate-500 text-sm">© 2026 Tessaro Labs. Tecnologia inteligente. Alma humana.</p>
         </div>
       </div>
     </footer>
